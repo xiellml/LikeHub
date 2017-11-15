@@ -1,7 +1,7 @@
 package com.pn.sie.likehub
 
 import android.support.multidex.MultiDexApplication
-import timber.log.Timber
+import com.pn.sie.likehub.xutil.LogPrinter
 
 /**
  * Created With Android Studio
@@ -21,7 +21,9 @@ class App : MultiDexApplication() {
 
     private fun testFunc() {
         if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree())
+            LogPrinter.enableRel(2, true)
+            LogPrinter.addUserLogger("Sie")
+            LogPrinter.takeOver("Sie")
         }
     }
 }
