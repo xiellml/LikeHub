@@ -15,7 +15,7 @@ import android.view.ViewGroup
  * A [android.preference.PreferenceActivity] which implements and proxies the necessary calls
  * to be used with AppCompat.
  */
-abstract class AppCompatPreferenceActivity : PreferenceActivity() {
+abstract class SettingsPreferenceActivity : PreferenceActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         delegate.installViewFactory()
