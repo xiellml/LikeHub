@@ -3,6 +3,7 @@ package com.pn.sie.likehub.view.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
@@ -15,11 +16,20 @@ import com.pn.sie.likehub.di.adapter.basic.ItemViewDelegate
 import com.pn.sie.likehub.di.adapter.basic.RcycViewHolder
 import com.pn.sie.likehub.xutil.LogPrinter
 import com.pn.sie.likehub.xutil.toast
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
 import kotlinx.android.synthetic.main.main_activity.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import java.util.*
+import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), IHomeMyRepos.IView {
+class MainActivity : AppCompatActivity(), IHomeMyRepos.IView, HasSupportFragmentInjector {
+
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> = dispatchingAndroidInjector
+
+    @Inject
+    private lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
 
     override fun setPresenter(presenter: IHomeMyRepos.IPresenter?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
