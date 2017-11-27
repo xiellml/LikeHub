@@ -17,12 +17,14 @@
 package com.pn.sie.likehub.di;
 
 import com.pn.sie.likehub.view.activity.MainActivity;
+import com.pn.sie.likehub.view.fragment.MainModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
 @Module
-public abstract class MainActivityModule {
-    @ContributesAndroidInjector(modules = FragmentBuildersModule.class)
-    abstract MainActivity contributeMainActivity();
+public abstract class ActivityBindingModule {
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = MainModule.class)//此处应该是View模块
+    abstract MainActivity mainActivity();
 }

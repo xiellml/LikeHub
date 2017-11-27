@@ -2,7 +2,7 @@
 - [ ] 分析项目: http://www.jianshu.com/p/c0ed0bc45ab6
 - [ ] 查询 [API][queryLink]
 - [ ] Google Sample
-- [ ] MVP&Kotlin: http://blog.csdn.net/a1018875550/article/details/73332594
+- [ ] MVP&Kotlin: https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/ https://github.com/a1018875550/ZhihuDaily http://blog.csdn.net/a1018875550/article/details/73332594
 - [ ] room: http://www.jianshu.com/p/29e5e8c75450
     
     ### 组件

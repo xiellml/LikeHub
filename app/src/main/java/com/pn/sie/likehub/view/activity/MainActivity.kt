@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
@@ -18,13 +17,14 @@ import com.pn.sie.likehub.xutil.LogPrinter
 import com.pn.sie.likehub.xutil.toast
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.DaggerAppCompatActivity
 import dagger.android.support.HasSupportFragmentInjector
 import kotlinx.android.synthetic.main.main_activity.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import java.util.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), IHomeMyRepos.IView, HasSupportFragmentInjector {
+class MainActivity : DaggerAppCompatActivity(), IHomeMyRepos.IView, HasSupportFragmentInjector {
 
     override fun supportFragmentInjector(): AndroidInjector<Fragment> = dispatchingAndroidInjector
 

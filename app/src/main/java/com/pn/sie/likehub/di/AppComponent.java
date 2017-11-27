@@ -24,13 +24,13 @@ import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
-import dagger.android.AndroidInjectionModule;
+import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
 @Component(modules = {
-        AndroidInjectionModule.class,
-        AppModule.class,
-        MainActivityModule.class
+        AndroidSupportInjectionModule.class,//四大组件的Map集合: 用来储存四大组件及其注入器(K-V: Dagger系统注入逻辑)
+        AppModule.class,//全局共享的服务: 数据库及表/ServiceAPI(共有实例)
+        ActivityBindingModule.class//Activity(MVP分离层级在这里做文章)
 })
 public interface AppComponent {
     void inject(App githubApp);
