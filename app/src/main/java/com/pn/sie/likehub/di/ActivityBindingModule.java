@@ -17,7 +17,7 @@
 package com.pn.sie.likehub.di;
 
 import com.pn.sie.likehub.view.activity.MainActivity;
-import com.pn.sie.likehub.view.fragment.MainModule;
+import com.pn.sie.likehub.view.fragment.HomeModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -25,6 +25,6 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class ActivityBindingModule {
     @ActivityScoped
-    @ContributesAndroidInjector(modules = MainModule.class)//此处应该是View模块
+    @ContributesAndroidInjector(modules = HomeModule.class)//此处应该是View模块
     abstract MainActivity mainActivity();
 }

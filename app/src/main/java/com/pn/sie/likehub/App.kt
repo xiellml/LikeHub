@@ -30,6 +30,18 @@ class App : MultiDexApplication(), HasActivityInjector {
         testFunc()
     }
 
+    companion object {
+        var enter = "_"
+
+        fun gate(value: String) {
+            enter = value
+        }
+
+        fun entered(): String {
+            return enter
+        }
+    }
+
     private fun testFunc() {
         if (BuildConfig.DEBUG) {
             LogPrinter.enableRel(2, true)

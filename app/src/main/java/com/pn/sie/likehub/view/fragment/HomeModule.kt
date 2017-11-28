@@ -15,11 +15,11 @@ import dagger.android.ContributesAndroidInjector
  * Author: Lee Sie
  * CopyRight: CL
  * <p>
- * Description: TODO
+ * Description: View模块, 提供View层, 并且将其注入(Binds)给Presenter
  * </p>
  */
 @Module
-abstract class MainModule {
+abstract class HomeModule {
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun mainFragment(): MainFragment

@@ -60,8 +60,6 @@ class MainActivity : DaggerAppCompatActivity(), IHomeMyRepos.IView, HasSupportFr
         }
 
         layRecyclerView()
-
-        LogPrinter.d(stringFromJNI())
     }
 
     private fun layRecyclerView() {
@@ -106,15 +104,7 @@ class MainActivity : DaggerAppCompatActivity(), IHomeMyRepos.IView, HasSupportFr
         }
     }
 
-    external fun stringFromJNI(): String
-
     companion object {
-        init {
-            //Used to load the 'native-lib' library on application startup.
-            //when does lib load? this activity
-            System.loadLibrary("native-lib")
-        }
-
         fun buildIntent(context: Context): Intent? {
             return Intent(context, MainActivity::class.java)
         }

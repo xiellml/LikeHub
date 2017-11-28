@@ -22,6 +22,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.pn.sie.likehub.App;
 
@@ -43,6 +45,7 @@ public class AppInjector {
                 .registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
                     @Override
                     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+                        tokenActivity(activity);
                         handleActivity(activity);
                     }
 
@@ -76,6 +79,14 @@ public class AppInjector {
 
                     }
                 });
+    }
+
+    private static void tokenActivity(Activity activity) {
+        if (TextUtils.isEmpty(App.Companion.entered())) {
+            //需要读取SharedP作为比对值
+            activity.finish();
+            Toast.makeText(activity.getApplication(), "please sign in", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private static void handleActivity(Activity activity) {

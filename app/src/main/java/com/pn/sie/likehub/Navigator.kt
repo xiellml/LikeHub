@@ -28,6 +28,7 @@ enum class Navigator {
     }
 
     fun showHome(context: Context) {
+        //比对enter值, 正确则进入MainActivity, 否则进入SignInActivity然后再回到MainActivity
         context.startActivity(MainActivity.buildIntent(context))
     }
 
