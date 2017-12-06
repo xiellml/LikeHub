@@ -1,19 +1,14 @@
-## todo lists
-- [ ] 分析项目: http://www.jianshu.com/p/c0ed0bc45ab6
+## 项目in progress
 - [ ] 查询 [API][queryLink]
-- [ ] Google Sample
-- [ ] MVP&Kotlin: https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/  https://github.com/ChineseLincoln/Dagger2Mvp
-      https://github.com/a1018875550/ZhihuDaily 
-      http://blog.csdn.net/a1018875550/article/details/73332594
-      http://blog.csdn.net/u012804379/article/details/51076617
-      http://blog.csdn.net/lihenair/article/details/51424942
-- [ ] room: http://www.jianshu.com/p/29e5e8c75450
+- [ ] GoogleSample 1: [ToDo][todoRepoLink] (MVP& Kotlin& Dagger) 
+- [ ] GoogleSample 2: [GithubBrowser][browserRepoLink] (项目分析学习) 
     
-    ### 组件
-    - [ ] dagger
-    - [ ] retrofit
-    - [ ] mockito or espresso[地址][espressoLink]
-    - [ ] DataBindingUtil or kotlin-android-extensions
+    
+## 组件
+- [x] dagger
+- [x] retrofit
+- [x] kotlin-android-extensions(or DataBindingUtil)
+- [ ] mockito or espresso[地址][espressoLink]
     
 
 Retrofit:
@@ -23,6 +18,29 @@ Retrofit:
 3. Retrofit.Builder().build().create(xx)构建出Service的实现类的实例(GoogleSample编写了GithubServiceTest类测试,是一个完整的逻辑)
 
 
-注: 报错指南http://www.jianshu.com/p/1b98d0a0e42d
+注: 
+   1)报错指南: 
+         http://www.jianshu.com/p/1b98d0a0e42d
+   2)dagger参考:
+         https://github.com/a1018875550/ZhihuDaily
+         https://github.com/ChineseLincoln/Dagger2Mvp
+         http://blog.csdn.net/a1018875550/article/details/73332594
+         http://blog.csdn.net/u012804379/article/details/51076617
+         http://blog.csdn.net/lihenair/article/details/51424942
+   3)Room参考:
+         room: http://www.jianshu.com/p/29e5e8c75450
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
    [queryLink]: <https://github.com/Zane96/GithubQuery.git>
+   [todoRepoLink]: <https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/>
+   [browserRepoLink]: <http://www.jianshu.com/p/c0ed0bc45ab6>
    [espressoLink]: <http://www.jianshu.com/p/a856ea119d11>
