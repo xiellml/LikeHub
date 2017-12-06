@@ -3,6 +3,7 @@ package com.pn.sie.likehub.xutil
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.support.v4.app.Fragment
 import android.widget.Toast
 
 /**
@@ -29,6 +30,10 @@ fun Any.getDimension(context: Context, resId: Int) = context.resources.getDimens
 
 fun Activity.toast(message: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
     Toast.makeText(this, message, duration).show()
+}
+
+fun Fragment.toast(message: CharSequence, duration: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(activity, message, duration).show()
 }
 
 //内联模式(代码替换, 而不会一个创建函数包裹的对象): inline

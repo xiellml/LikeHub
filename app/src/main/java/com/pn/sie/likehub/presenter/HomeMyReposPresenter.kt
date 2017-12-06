@@ -1,7 +1,14 @@
 package com.pn.sie.likehub.presenter
 
+import android.arch.lifecycle.LifecycleOwner
+import android.arch.lifecycle.Observer
+import android.support.annotation.NonNull
+import com.pn.sie.likehub.api.ApiResponse
 import com.pn.sie.likehub.contract.IHomeMyRepos
+import com.pn.sie.likehub.di.ActivityScoped
 import com.pn.sie.likehub.model.IHomeMyReposModel
+import com.pn.sie.likehub.model.entity.Repo
+import com.pn.sie.likehub.xutil.LogPrinter
 import javax.inject.Inject
 
 /**
@@ -14,15 +21,19 @@ import javax.inject.Inject
  * TODO: 构造方法中的参数使用了接口, 在实际注入时可以使用对应实现类由DaggerXxxComponent.Builder()注入
  * </p>
  */
+@ActivityScoped
 class HomeMyReposPresenter @Inject constructor(var model: IHomeMyReposModel?, var view: IHomeMyRepos.IView?) : IHomeMyRepos.IPresenter {
-
 
     override fun start() {
         //创建Fg实例开始时
     }
 
-    override fun holdMyRepos(isRefresh: Boolean) {
+    override fun holdMyRepos(@NonNull owner: LifecycleOwner, isRefresh: Boolean) {
         //持有数据, 进行Data-View绑定
+        model?.getServerMyRepos(isRefresh)?.observe(owner, Observer { data ->
+            LogPrinter.d("data is null $data; " + data?.body)
+            view?.showMyRepos(isRefresh, data?.body)//data省略时, 使用it
+        })
     }
 
     override fun placeLastOpenTime() {

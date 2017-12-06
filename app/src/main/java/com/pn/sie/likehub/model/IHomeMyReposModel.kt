@@ -1,6 +1,10 @@
 package com.pn.sie.likehub.model
 
-import com.pn.sie.likehub.model.callbak.LoadReposCallback
+import android.arch.lifecycle.LiveData
+import com.pn.sie.likehub.api.ApiResponse
+import com.pn.sie.likehub.model.entity.Repo
+import dagger.Module
+
 
 /**
  * Created With Android Studio
@@ -12,6 +16,5 @@ import com.pn.sie.likehub.model.callbak.LoadReposCallback
  * </p>
  */
 interface IHomeMyReposModel {
-
-    fun getServerMyRepos(isRefresh: Boolean = true, callback: LoadReposCallback)
+    fun getServerMyRepos(isRefresh: Boolean = true): LiveData<ApiResponse<List<Repo>>>
 }

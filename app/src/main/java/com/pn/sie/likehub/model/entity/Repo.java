@@ -55,6 +55,17 @@ public class Repo {
         this.stars = stars;
     }
 
+    @Override
+    public String toString() {
+        return "Repo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", description='" + description + '\'' +
+                ", stars=" + stars +
+                '}';
+    }
+
     public static class Owner {
         @SerializedName("login")
         @NonNull

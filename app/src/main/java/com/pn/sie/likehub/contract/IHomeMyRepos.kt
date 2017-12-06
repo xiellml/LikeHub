@@ -1,7 +1,10 @@
 package com.pn.sie.likehub.contract
 
+import android.arch.lifecycle.LifecycleOwner
+import android.support.annotation.NonNull
 import com.pn.sie.likehub.contract.base.IBaseP
 import com.pn.sie.likehub.contract.base.IBaseV
+import com.pn.sie.likehub.model.entity.Repo
 
 /**
  * Created With Android Studio
@@ -14,13 +17,13 @@ import com.pn.sie.likehub.contract.base.IBaseV
  */
 interface IHomeMyRepos {
     interface IView : IBaseV<IPresenter> {
-        fun showMyRepos(isRefresh: Boolean = true)
+        fun showMyRepos(isRefresh: Boolean = true, data: List<Repo>?)
         fun leaveApp()
     }
 
     //input/output
     interface IPresenter : IBaseP {
-        fun holdMyRepos(isRefresh: Boolean = true)
+        fun holdMyRepos(@NonNull owner: LifecycleOwner, isRefresh: Boolean = true)
         fun placeLastOpenTime()
     }
 }

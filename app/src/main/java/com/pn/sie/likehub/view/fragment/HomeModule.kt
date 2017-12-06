@@ -1,13 +1,11 @@
 package com.pn.sie.likehub.view.fragment
 
+import com.pn.sie.likehub.api.GithubService
 import com.pn.sie.likehub.contract.IHomeMyRepos
-import com.pn.sie.likehub.di.ActivityScoped
-import com.pn.sie.likehub.di.FragmentScoped
-import com.pn.sie.likehub.presenter.HomeMyReposPresenter
-
-import dagger.Binds
+import com.pn.sie.likehub.model.IHomeMyReposModel
+import com.pn.sie.likehub.model.impl.HomeMyReposModel
 import dagger.Module
-import dagger.android.ContributesAndroidInjector
+import dagger.Provides
 
 /**
  * Created With Android Studio
@@ -15,16 +13,19 @@ import dagger.android.ContributesAndroidInjector
  * Author: Lee Sie
  * CopyRight: CL
  * <p>
- * Description: View模块, 提供View层, 并且将其注入(Binds)给Presenter
+ * Description: 提供View的Module模块, 提供View层, 并且将其注入(Binds)给Presenter
  * </p>
  */
 @Module
-abstract class HomeModule {
-    @FragmentScoped
-    @ContributesAndroidInjector
-    internal abstract fun mainFragment(): MainFragment
+class HomeModule {
 
-    @ActivityScoped
-    @Binds
-    internal abstract fun homeReposPresenter(presenter: HomeMyReposPresenter): IHomeMyRepos.IPresenter
+    @Provides
+    fun modelProvider(githubService: GithubService): IHomeMyReposModel {
+        return HomeMyReposModel(githubService)
+    }
+
+    @Provides
+    fun viewProvider(fragment: MainFragment): IHomeMyRepos.IView {
+        return fragment
+    }
 }

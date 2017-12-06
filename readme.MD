@@ -2,9 +2,11 @@
 - [ ] 分析项目: http://www.jianshu.com/p/c0ed0bc45ab6
 - [ ] 查询 [API][queryLink]
 - [ ] Google Sample
-- [ ] MVP&Kotlin: https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/ 
+- [ ] MVP&Kotlin: https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/  https://github.com/ChineseLincoln/Dagger2Mvp
       https://github.com/a1018875550/ZhihuDaily 
       http://blog.csdn.net/a1018875550/article/details/73332594
+      http://blog.csdn.net/u012804379/article/details/51076617
+      http://blog.csdn.net/lihenair/article/details/51424942
 - [ ] room: http://www.jianshu.com/p/29e5e8c75450
     
     ### 组件

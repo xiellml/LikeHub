@@ -18,7 +18,10 @@ package com.pn.sie.likehub.di;
 
 import android.app.Application;
 
+
 import com.pn.sie.likehub.App;
+
+import dagger.android.AndroidInjector;
 
 import javax.inject.Singleton;
 
@@ -26,17 +29,22 @@ import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
+//TODO 使用知乎日报Program
 @Singleton
 @Component(modules = {
         AndroidSupportInjectionModule.class,//四大组件的Map集合: 用来储存四大组件及其注入器(K-V: Dagger系统注入逻辑)
         AppModule.class,//全局共享的服务: 数据库及表/ServiceAPI(共有实例)
         ActivityBindingModule.class//Activity(MVP分离层级在这里做文章)
 })
-public interface AppComponent {
+public interface AppComponent extends AndroidInjector<App> {
+    @Override
     void inject(App githubApp);
+
     @Component.Builder
     interface Builder {
-        @BindsInstance Builder application(Application application);
+        @BindsInstance
+        Builder application(Application application);
+
         AppComponent build();
     }
 }

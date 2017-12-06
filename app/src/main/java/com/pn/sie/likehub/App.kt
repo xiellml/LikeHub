@@ -20,7 +20,7 @@ import javax.inject.Inject
 class App : MultiDexApplication(), HasActivityInjector {
 
     @Inject
-    private lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
     override fun activityInjector(): DispatchingAndroidInjector<Activity> = dispatchingAndroidInjector
 

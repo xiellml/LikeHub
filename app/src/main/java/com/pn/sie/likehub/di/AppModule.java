@@ -34,7 +34,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module
 class AppModule {
-    @Singleton @Provides
+    @Singleton
+    @Provides
     GithubService provideGithubService() {
         return new Retrofit.Builder()
                 .baseUrl("https://api.github.com/")
@@ -44,17 +45,20 @@ class AppModule {
                 .create(GithubService.class);
     }
 
-    @Singleton @Provides
+    @Singleton
+    @Provides
     GithubDb provideDb(Application app) {
-        return Room.databaseBuilder(app, GithubDb.class,"github.db").build();
+        return Room.databaseBuilder(app, GithubDb.class, "github.db").build();
     }
 
-    @Singleton @Provides
+    @Singleton
+    @Provides
     UserDao provideUserDao(GithubDb db) {
         return db.userDao();
     }
 
-    @Singleton @Provides
+    @Singleton
+    @Provides
     RepoDao provideRepoDao(GithubDb db) {
         return db.repoDao();
     }

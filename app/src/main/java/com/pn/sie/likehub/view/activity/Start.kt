@@ -13,6 +13,7 @@ class Start : AppCompatActivity() {
         LogPrinter.d("start..")
         App.gate(stringFromJNI())
         Navigator.INSTANCE.showHome(this)
+        finish()
     }
 
     external fun stringFromJNI(): String
