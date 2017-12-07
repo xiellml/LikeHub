@@ -21,9 +21,9 @@ enum class Navigator {
 
     fun sendRepoToEmailBox(context: Context, url: String) {
         val data = Intent(Intent.ACTION_SENDTO)
-        data.data = Uri.parse("mailto:siesielee@gmail.com")
-        data.putExtra(Intent.EXTRA_SUBJECT, "RePost Github Repo")
-        data.putExtra("text", "Valued Repo: " + url)
+        data.data = Uri.parse("mailto:siesielee@gmail.com")//or i.putExtra(Intent.EXTRA_EMAIL  , new String[]{"recipient@example.com"});
+        data.putExtra(Intent.EXTRA_SUBJECT, "Send Github site")
+        data.putExtra(Intent.EXTRA_TEXT, "I want to follow u, and this is my github-> " + url)
         context.startActivity(data)
     }
 

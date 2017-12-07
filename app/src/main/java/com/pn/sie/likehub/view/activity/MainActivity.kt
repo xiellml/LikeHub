@@ -3,9 +3,11 @@ package com.pn.sie.likehub.view.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import com.pn.sie.likehub.App
 import com.pn.sie.likehub.Navigator
 import com.pn.sie.likehub.R
 import com.pn.sie.likehub.di.adapter.RcycCmmAdapter
@@ -18,7 +20,7 @@ import kotlinx.android.synthetic.main.main_activity.*
 import kotlinx.android.synthetic.main.main_fragment.*
 import java.util.*
 
-class MainActivity : DaggerAppCompatActivity()  {
+class MainActivity : DaggerAppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +28,9 @@ class MainActivity : DaggerAppCompatActivity()  {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener {
-            Navigator.INSTANCE.sendRepoToEmailBox(this, "https://faked.url")
+            Navigator.INSTANCE.sendRepoToEmailBox(this, "https://github.com/" + PreferenceManager
+                    .getDefaultSharedPreferences(App.self)
+                    .getString("example_text", ""))
         }
     }
 

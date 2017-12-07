@@ -83,12 +83,11 @@ class MainFragment @Inject constructor() : DaggerFragment(), IHomeMyRepos.IView 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         layRecyclerView()
-        presenter.holdMyRepos(this, false)
     }
 
     override fun onResume() {
         super.onResume()
-        //presenter.holdMyRepos(this, true)
+        presenter.holdMyRepos(this, true)//刷新参数未处理
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =

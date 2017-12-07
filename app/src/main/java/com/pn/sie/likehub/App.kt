@@ -26,11 +26,14 @@ class App : MultiDexApplication(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
+        self = this
         AppInjector.init(this)
         testFunc()
     }
 
     companion object {
+        lateinit var self: App
+
         var enter = "_"
 
         fun gate(value: String) {

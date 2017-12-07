@@ -15,8 +15,10 @@ import android.preference.PreferenceFragment
 import android.preference.PreferenceManager
 import android.preference.RingtonePreference
 import android.text.TextUtils
+import android.util.Log
 import android.view.MenuItem
 import com.pn.sie.likehub.R
+import com.pn.sie.likehub.xutil.LogPrinter
 
 /**
  * A [PreferenceActivity] that presents a set of application settings. On
@@ -68,6 +70,13 @@ class SettingsActivity : SettingsPreferenceActivity() {
                 || NotificationPreferenceFragment::class.java.name == fragmentName
     }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.getItemId() == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
     /**
      * This fragment shows general preferences only. It is used when the
      * activity is showing a two-pane settings UI.
@@ -85,15 +94,6 @@ class SettingsActivity : SettingsPreferenceActivity() {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("example_text"))
             bindPreferenceSummaryToValue(findPreference("example_list"))
-        }
-
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            val id = item.itemId
-            if (id == android.R.id.home) {
-                startActivity(Intent(activity, SettingsActivity::class.java))
-                return true
-            }
-            return super.onOptionsItemSelected(item)
         }
     }
 
@@ -114,15 +114,6 @@ class SettingsActivity : SettingsPreferenceActivity() {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("notifications_new_message_ringtone"))
         }
-
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            val id = item.itemId
-            if (id == android.R.id.home) {
-                startActivity(Intent(activity, SettingsActivity::class.java))
-                return true
-            }
-            return super.onOptionsItemSelected(item)
-        }
     }
 
     /**
@@ -141,15 +132,6 @@ class SettingsActivity : SettingsPreferenceActivity() {
             // updated to reflect the new value, per the Android Design
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("sync_frequency"))
-        }
-
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            val id = item.itemId
-            if (id == android.R.id.home) {
-                startActivity(Intent(activity, SettingsActivity::class.java))
-                return true
-            }
-            return super.onOptionsItemSelected(item)
         }
     }
 
