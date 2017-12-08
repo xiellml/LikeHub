@@ -41,6 +41,6 @@ Retrofit:
          
          
    [queryLink]: <https://github.com/Zane96/GithubQuery.git>
-   [todoRepoLink]: <https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/>
+   [todoRepoLink]: <https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/todo.md>
    [browserRepoLink]: <http://www.jianshu.com/p/c0ed0bc45ab6>
    [espressoLink]: <http://www.jianshu.com/p/a856ea119d11>
