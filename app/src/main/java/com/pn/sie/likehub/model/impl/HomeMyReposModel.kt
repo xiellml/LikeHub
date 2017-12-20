@@ -18,7 +18,8 @@ import javax.inject.Inject
  * Author: Lee Sie
  * CopyRight: CL
  * <p>
- * Description: 可以设计为可更改用户; 若需要本地化则需要把getRepos()再包裹一层如: new NetworkBoundResource<List<Repo>, List<Repo>>
+ * Description: todo 读写逻辑
+ * 可以设计为可更改用户; 若需要本地化则需要把getRepos()再包裹一层如: new NetworkBoundResource<List<Repo>, List<Repo>>
  * </p>
  */
 class HomeMyReposModel @Inject constructor(var githubService: GithubService) : IHomeMyReposModel {

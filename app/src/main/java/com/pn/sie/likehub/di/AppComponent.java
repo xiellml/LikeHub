@@ -29,13 +29,13 @@ import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.support.AndroidSupportInjectionModule;
 
-//TODO 使用知乎日报Program
 @Singleton
 @Component(modules = {
         AndroidSupportInjectionModule.class,//四大组件的Map集合: 用来储存四大组件及其注入器(K-V: Dagger系统注入逻辑)
         AppModule.class,//全局共享的服务: 数据库及表/ServiceAPI(共有实例)
         ActivityBindingModule.class//Activity(MVP分离层级在这里做文章)
 })
+//App级别的注入, 方便全局管理
 public interface AppComponent extends AndroidInjector<App> {
     @Override
     void inject(App githubApp);

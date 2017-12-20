@@ -18,7 +18,7 @@ import javax.inject.Inject
  * CopyRight: CL
  * <p>
  * Description: 构造函数处标识@Inject表明是依赖件, 并且参数处注入两个接口组件, 将会以Provider形式创建它们的实例
- * TODO: 构造方法中的参数使用了接口, 在实际注入时可以使用对应实现类由DaggerXxxComponent.Builder()注入
+ * 构造方法中的参数使用了接口, 在实际注入时可以使用对应实现类由DaggerXxxComponent.Builder()注入
  * </p>
  */
 @ActivityScoped

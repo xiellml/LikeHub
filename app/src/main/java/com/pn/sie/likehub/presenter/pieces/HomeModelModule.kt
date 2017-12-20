@@ -1,7 +1,8 @@
-package com.pn.sie.likehub.model.impl
+package com.pn.sie.likehub.presenter.pieces
 
 import com.pn.sie.likehub.api.GithubService
 import com.pn.sie.likehub.model.IHomeMyReposModel
+import com.pn.sie.likehub.model.impl.HomeMyReposModel
 import dagger.Module
 import dagger.Provides
 
@@ -11,7 +12,7 @@ import dagger.Provides
  * Author: Lee Sie
  * CopyRight: CL
  * <p>
- * Description: TODO
+ * Description: 这个类没被使用, 因为它只提供了Model的依赖件(View未对外提供给P层使用)
  * </p>
  */
 @Module

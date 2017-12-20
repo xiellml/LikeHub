@@ -19,16 +19,18 @@ Retrofit:
 
 
 注: 
-   1)报错指南: 
-         http://www.jianshu.com/p/1b98d0a0e42d
-   2)dagger参考:
-         https://github.com/a1018875550/ZhihuDaily
-         https://github.com/ChineseLincoln/Dagger2Mvp
-         http://blog.csdn.net/a1018875550/article/details/73332594
-         http://blog.csdn.net/u012804379/article/details/51076617
-         http://blog.csdn.net/lihenair/article/details/51424942
-   3)Room参考:
-         room: http://www.jianshu.com/p/29e5e8c75450
+ - 1)报错指南: 
+   * http://www.jianshu.com/p/1b98d0a0e42d
+         
+ - 2)dagger参考:
+   * https://github.com/a1018875550/ZhihuDaily
+   * https://github.com/ChineseLincoln/Dagger2Mvp
+   * http://blog.csdn.net/a1018875550/article/details/73332594
+   * http://blog.csdn.net/u012804379/article/details/51076617
+   * http://blog.csdn.net/lihenair/article/details/51424942
+         
+ - 3)Room参考:
+   * room: http://www.jianshu.com/p/29e5e8c75450
          
          
          

@@ -17,19 +17,19 @@
 package com.pn.sie.likehub.di;
 
 import com.pn.sie.likehub.view.activity.MainActivity;
-import com.pn.sie.likehub.view.fragment.HomeModule;
+import com.pn.sie.likehub.presenter.pieces.HomePresenterPiecesModule;
 import com.pn.sie.likehub.view.fragment.MainFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-@Module
+@Module//Android用户层面上的View界面接口
 abstract class ActivityBindingModule {
     @ActivityScoped
     @ContributesAndroidInjector
     abstract MainActivity mainActivity();
 
     @ActivityScoped
-    @ContributesAndroidInjector(modules = HomeModule.class)
-    abstract MainFragment mainFragment();
+    @ContributesAndroidInjector(modules = HomePresenterPiecesModule.class)//将Presenter所需依赖(M和V)单独向外部公开, 以便P层能获取到
+    abstract MainFragment mainFragment();//使用P层的起始点, 若注入完毕, P层作为中介者应当管理好View层的各种响应(统一组织)并分发给Model来处理
 }

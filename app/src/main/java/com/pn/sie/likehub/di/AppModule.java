@@ -32,7 +32,7 @@ import dagger.Provides;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-@Module
+@Module//全局共享的服务
 class AppModule {
     @Singleton
     @Provides

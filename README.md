@@ -5,7 +5,7 @@
 What's LikeHub?
 ---
 [![](https://img.shields.io/badge/%20%20Android%20Arsenal%20%20-%20%20LikeHub%20%20-blue.svg)](https://android-arsenal.com/)
-[![](https://img.shields.io/badge/%20%20aar%20size-xKB-green.svg)](https://bintray.com/)
+[![](https://img.shields.io/badge/%20%20aar%20size-1MB-green.svg)](https://bintray.com/)
 :point_right:[![](https://img.shields.io/github/release/sieml/LikeHub.svg)](https://github.com/sieml/LikeHub/releases):point_left:
 
 
@@ -38,7 +38,7 @@ Any questions: Welcome to contact me.
    limitations under the License.
    
 ## Docs
-* :point_right: [FAQ](docs/FAQ.md)
-* 📌 [Version changelog](docs/changelog.md)
+* :point_right: [FAQ](doc/FAQ.md)
+* 📌 [Version changelog](doc/changelog.md)
 * [Best Practice](/doc/bestPractice.md)
-* [developing](https://github.com/youlookwhat/CloudReader/blob/master/doc/todo.md)
+* [developing](https://github.com/sieml/LikeHub/blob/master/doc/todo.md)
