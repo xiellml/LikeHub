@@ -17,6 +17,7 @@ import android.preference.RingtonePreference
 import android.text.TextUtils
 import android.util.Log
 import android.view.MenuItem
+import com.pn.sie.likehub.Navigator
 import com.pn.sie.likehub.R
 import com.pn.sie.likehub.xutil.LogPrinter
 
@@ -77,6 +78,7 @@ class SettingsActivity : SettingsPreferenceActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     /**
      * This fragment shows general preferences only. It is used when the
      * activity is showing a two-pane settings UI.
@@ -94,6 +96,11 @@ class SettingsActivity : SettingsPreferenceActivity() {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("example_text"))
             bindPreferenceSummaryToValue(findPreference("example_list"))
+            val preference = findPreference("example_profile")
+            preference.setOnPreferenceClickListener {
+                Navigator.INSTANCE.navigateToProfile(this@GeneralPreferenceFragment.activity)
+                true
+            }
         }
     }
 

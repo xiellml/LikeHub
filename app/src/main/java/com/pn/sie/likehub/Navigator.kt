@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import com.pn.sie.likehub.view.activity.MainActivity
+import com.pn.sie.likehub.view.activity.ProfileActivity
 import com.pn.sie.likehub.view.activity.SettingsActivity
 
 /**
@@ -30,6 +31,10 @@ enum class Navigator {
     fun showHome(context: Context) {
         //比对enter值, 正确则进入MainActivity, 否则进入SignInActivity然后再回到MainActivity
         context.startActivity(MainActivity.buildIntent(context))
+    }
+
+    fun navigateToProfile(context: Context) {
+        context.startActivity(ProfileActivity.buildIntent(context))
     }
 
     fun navigateToSettings(context: Context) {

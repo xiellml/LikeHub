@@ -17,7 +17,11 @@
         android:selectAllOnFocus="true"
         android:singleLine="true"
         android:title="@string/pref_title_display_name" />
-
+    <!--display github profile-->
+    <Preference
+        android:key="example_profile"
+        android:summary="View your profile of Github"
+        android:title="Account Details" />
     <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
          dismiss it. -->
     <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
