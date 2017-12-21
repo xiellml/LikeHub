@@ -5,6 +5,7 @@ import android.support.annotation.NonNull
 import com.pn.sie.likehub.contract.base.IBasePresenter
 import com.pn.sie.likehub.contract.base.IBaseView
 import com.pn.sie.likehub.model.entity.Repo
+import com.pn.sie.likehub.model.entity.User
 
 /**
  * Created With Android Studio
@@ -15,15 +16,12 @@ import com.pn.sie.likehub.model.entity.Repo
  * Description: TODO
  * </p>
  */
-interface IHomeMyRepos {
-    interface IView : IBaseView<IPresenter> {
-        fun showMyRepos(isRefresh: Boolean = true, data: List<Repo>?)
-        fun leaveApp()
+interface IProfileUserInfo {
+    interface IView : IBaseView<IBasePresenter> {
+        fun showUserInfo(data: User?)
     }
 
-    //input/output
     interface IPresenter : IBasePresenter {
-        fun holdMyRepos(@NonNull owner: LifecycleOwner, isRefresh: Boolean = true)
-        fun placeLastOpenTime()
+        fun holdUserInfo(@NonNull owner: LifecycleOwner)
     }
 }

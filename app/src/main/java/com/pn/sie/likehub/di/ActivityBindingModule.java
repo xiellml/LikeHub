@@ -16,8 +16,12 @@
 
 package com.pn.sie.likehub.di;
 
+import com.pn.sie.likehub.presenter.pieces.ProfilePresenterPiecesModule;
+import com.pn.sie.likehub.presenter.pieces.SearchReposPresenterPiecesModule;
 import com.pn.sie.likehub.view.activity.MainActivity;
 import com.pn.sie.likehub.presenter.pieces.HomePresenterPiecesModule;
+import com.pn.sie.likehub.view.activity.ProfileActivity;
+import com.pn.sie.likehub.view.activity.SearchReposActivity;
 import com.pn.sie.likehub.view.fragment.MainFragment;
 
 import dagger.Module;
@@ -29,7 +33,15 @@ abstract class ActivityBindingModule {
     @ContributesAndroidInjector
     abstract MainActivity mainActivity();
 
-    @ActivityScoped
-    @ContributesAndroidInjector(modules = HomePresenterPiecesModule.class)//将Presenter所需依赖(M和V)单独向外部公开, 以便P层能获取到
+    @ActivityScoped//HomePresenterPiecesModule.class将Presenter所需依赖(M和V)单独向外部公开, 以便P层能获取到
+    @ContributesAndroidInjector(modules = HomePresenterPiecesModule.class)
     abstract MainFragment mainFragment();//使用P层的起始点, 若注入完毕, P层作为中介者应当管理好View层的各种响应(统一组织)并分发给Model来处理
+
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = ProfilePresenterPiecesModule.class)
+    abstract ProfileActivity profileActivity();
+
+    @ActivityScoped
+    @ContributesAndroidInjector(modules = SearchReposPresenterPiecesModule.class)
+    abstract SearchReposActivity searchReposActivity();
 }

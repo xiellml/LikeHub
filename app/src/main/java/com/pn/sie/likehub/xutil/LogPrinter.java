@@ -294,7 +294,8 @@ public class LogPrinter {
             if (logLevel <= Log.DEBUG) {
                 String sign = getFunctionName();
                 if (sign != null) {
-                    splitJson(Log.DEBUG, tag, sign + msg);
+                    Log.d(tag, sign + "json --->");
+                    splitJson(Log.DEBUG, tag, "" + msg);
                 } else {
                     splitJson(Log.DEBUG, tag, msg.toString());
                 }

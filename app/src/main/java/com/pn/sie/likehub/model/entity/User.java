@@ -46,4 +46,16 @@ public class User {
         this.reposUrl = reposUrl;
         this.blog = blog;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "login='" + login + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", name='" + name + '\'' +
+                ", company='" + company + '\'' +
+                ", reposUrl='" + reposUrl + '\'' +
+                ", blog='" + blog + '\'' +
+                '}';
+    }
 }

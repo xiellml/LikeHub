@@ -31,7 +31,7 @@ class HomeMyReposPresenter @Inject constructor(var model: IHomeMyReposModel?, va
     override fun holdMyRepos(@NonNull owner: LifecycleOwner, isRefresh: Boolean) {
         //持有数据, 进行Data-View绑定
         model?.getServerMyRepos(isRefresh)?.observe(owner, Observer { data ->
-            LogPrinter.d("data is null $data; " + data?.body)
+            LogPrinter.d("object is: $data,\nbody is: " + data?.body)
             view?.showMyRepos(isRefresh, data?.body)//data省略时, 使用it
         })
     }
