@@ -35,9 +35,9 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".view.activity.ProfileActivity" />
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".view.activity.SearchReposActivity"></activity>
+            android:name=".view.activity.SearchReposActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".view.activity.FoundReposListActivity"/>
     </application>
 
 </manifest>

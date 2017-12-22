@@ -45,6 +45,11 @@ class MainActivity : DaggerAppCompatActivity() {
                 Navigator.INSTANCE.navigateToSettings(this)
                 true
             }
+
+            R.id.action_search-> {
+                Navigator.INSTANCE.navigateToSearch(this)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

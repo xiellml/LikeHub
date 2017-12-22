@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import com.pn.sie.likehub.view.activity.MainActivity
 import com.pn.sie.likehub.view.activity.ProfileActivity
+import com.pn.sie.likehub.view.activity.SearchReposActivity
 import com.pn.sie.likehub.view.activity.SettingsActivity
 
 /**
@@ -40,6 +41,12 @@ enum class Navigator {
     fun navigateToSettings(context: Context) {
         val intent = SettingsActivity.buildIntent(context)
         intent.putExtra("from", "mine_fm")
+        context.startActivity(intent)
+    }
+
+    fun navigateToSearch(context: Context) {
+        val intent = SearchReposActivity.buildIntent(context)
+        //intent.putExtra("queryTxt", "keyword")
         context.startActivity(intent)
     }
 
