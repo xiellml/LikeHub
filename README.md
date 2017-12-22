@@ -19,7 +19,7 @@ What's LikeHub?
 Any questions: Welcome to contact me.
  - **Email:** siesielee@gmail.com
  - **QQ:** 864861844
- - **Blog:** 挂掉了, 旧的不维护http://blog.csdn.net/u010311220
+ - **Blog:** 
 
 ## License
 
