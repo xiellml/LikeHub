@@ -2,10 +2,13 @@ package com.pn.sie.likehub
 
 import android.app.Activity
 import android.support.multidex.MultiDexApplication
+import android.support.v4.app.Fragment
 import com.pn.sie.likehub.di.AppInjector
 import com.pn.sie.likehub.xutil.LogPrinter
+import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
 /**
@@ -19,10 +22,8 @@ import javax.inject.Inject
  */
 class App : MultiDexApplication(), HasActivityInjector {
 
-    @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
-
-    override fun activityInjector(): DispatchingAndroidInjector<Activity> = dispatchingAndroidInjector
+    @Inject lateinit var activityInjector: DispatchingAndroidInjector<Activity>
+    override fun activityInjector(): DispatchingAndroidInjector<Activity> = activityInjector
 
     override fun onCreate() {
         super.onCreate()

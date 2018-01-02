@@ -1,7 +1,7 @@
 package com.pn.sie.likehub.view.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.pn.sie.likehub.App
 import com.pn.sie.likehub.Navigator
 import com.pn.sie.likehub.xutil.LogPrinter

@@ -4,21 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.pn.sie.likehub.App
 import com.pn.sie.likehub.Navigator
 import com.pn.sie.likehub.R
-import com.pn.sie.likehub.di.adapter.RcycCmmAdapter
-import com.pn.sie.likehub.di.adapter.basic.ItemViewDelegate
-import com.pn.sie.likehub.di.adapter.basic.RcycViewHolder
-import com.pn.sie.likehub.model.entity.Repo
-import com.pn.sie.likehub.xutil.toast
 import dagger.android.support.DaggerAppCompatActivity
 import kotlinx.android.synthetic.main.main_activity.*
-import kotlinx.android.synthetic.main.main_fragment.*
-import java.util.*
 
 class MainActivity : DaggerAppCompatActivity() {
 
@@ -26,7 +18,6 @@ class MainActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         setSupportActionBar(toolbar)
-
         fab.setOnClickListener {
             Navigator.INSTANCE.sendRepoToEmailBox(this, "https://github.com/" + PreferenceManager
                     .getDefaultSharedPreferences(App.self)
@@ -46,7 +37,7 @@ class MainActivity : DaggerAppCompatActivity() {
                 true
             }
 
-            R.id.action_search-> {
+            R.id.action_search -> {
                 Navigator.INSTANCE.navigateToSearch(this)
                 true
             }

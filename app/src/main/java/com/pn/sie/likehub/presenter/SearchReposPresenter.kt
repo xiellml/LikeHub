@@ -6,6 +6,7 @@ import android.support.annotation.NonNull
 import com.pn.sie.likehub.contract.ISearchRepos
 import com.pn.sie.likehub.di.ActivityScoped
 import com.pn.sie.likehub.model.ISearchReposModel
+import javax.inject.Inject
 
 /**
  * Created With Android Studio
@@ -17,12 +18,12 @@ import com.pn.sie.likehub.model.ISearchReposModel
  * </p>
  */
 @ActivityScoped
-class SearchReposPresenter constructor(var model: ISearchReposModel, var view: ISearchRepos.IView) : ISearchRepos.IPresenter {
+class SearchReposPresenter @Inject constructor(var model: ISearchReposModel, var view: ISearchRepos.IView) : ISearchRepos.IPresenter {
 
     override fun holdFoundRepos(@NonNull owner: LifecycleOwner, query: String) {
         model.getSearchRepos(query).observe(owner, Observer { data ->
             //todo next NetworkBoundResource涉及本地数据库
-            view.showFoundRepos()
+            view.showFoundRepos(data?.body)
         })
     }
 

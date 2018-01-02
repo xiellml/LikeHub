@@ -39,23 +39,23 @@ public interface GithubService {
     @GET("users/{login}")
     LiveData<ApiResponse<User>> getUser(@Path("login") String login);
 
-    //用户的所有仓库: 某人的所有repos, 每个repo信息封装为一个对象
+    //用户所有仓库: 某人的所有repos, 每个repo信息封装为一个对象
     @GET("users/{login}/repos")
     LiveData<ApiResponse<List<Repo>>> getRepos(@Path("login") String login);
 
-    //某个仓库
+    //仓库详情
     @GET("repos/{owner}/{name}")
     LiveData<ApiResponse<Repo>> getRepo(@Path("owner") String owner, @Path("name") String name);
 
-    //某个仓库的-代码贡献者
+    //仓库贡献者
     @GET("repos/{owner}/{name}/contributors")
     LiveData<ApiResponse<List<Contributor>>> getContributors(@Path("owner") String owner, @Path("name") String name);
 
-    //搜索-仓库关键字
+    //关键字搜索仓库
     @GET("search/repositories")
     LiveData<ApiResponse<RepoSearchResponse>> searchRepos(@Query("q") String query);
 
-    //分页搜索-仓库关键字
+    //关键字分页搜索仓库
     @GET("search/repositories")
     Call<RepoSearchResponse> searchRepos(@Query("q") String query, @Query("page") int page);
 }

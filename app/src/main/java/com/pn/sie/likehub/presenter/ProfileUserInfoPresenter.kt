@@ -5,6 +5,7 @@ import android.arch.lifecycle.Observer
 import android.support.annotation.NonNull
 import com.pn.sie.likehub.contract.IProfileUserInfo
 import com.pn.sie.likehub.di.ActivityScoped
+import com.pn.sie.likehub.model.IProfileUserInfoModel
 import com.pn.sie.likehub.model.impl.ProfileUserInfoModel
 import javax.inject.Inject
 
@@ -18,7 +19,7 @@ import javax.inject.Inject
  * </p>
  */
 @ActivityScoped
-class ProfileUserInfoPresenter @Inject constructor(var model: ProfileUserInfoModel, var view: IProfileUserInfo.IView) : IProfileUserInfo.IPresenter {
+class ProfileUserInfoPresenter @Inject constructor(var model: IProfileUserInfoModel, var view: IProfileUserInfo.IView) : IProfileUserInfo.IPresenter {
     override fun start() {
     }
 

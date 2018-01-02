@@ -36,7 +36,7 @@
         <activity android:name=".view.activity.ProfileActivity" />
         <activity
             android:name=".view.activity.SearchReposActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".view.activity.FoundReposListActivity"/>
     </application>
 

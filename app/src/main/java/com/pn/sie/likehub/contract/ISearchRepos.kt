@@ -4,6 +4,7 @@ import android.arch.lifecycle.LifecycleOwner
 import android.support.annotation.NonNull
 import com.pn.sie.likehub.contract.base.IBasePresenter
 import com.pn.sie.likehub.contract.base.IBaseView
+import com.pn.sie.likehub.model.entity.RepoSearchResponse
 
 /**
  * Created With Android Studio
@@ -16,7 +17,7 @@ import com.pn.sie.likehub.contract.base.IBaseView
  */
 interface ISearchRepos {
     interface IView : IBaseView<IBasePresenter> {
-        fun showFoundRepos()
+        fun showFoundRepos(data: RepoSearchResponse?)
     }
 
     interface IPresenter : IBasePresenter {

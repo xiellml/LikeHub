@@ -36,8 +36,9 @@ import dagger.android.support.AndroidSupportInjectionModule;
         ActivityBindingModule.class//Activity(MVP分离层级在这里做文章)
 })
 //App级别的注入, 方便全局管理
-public interface AppComponent extends AndroidInjector<App> {
-    @Override
+public interface AppComponent /*extends AndroidInjector<App>*/ {
+
+    //@Override
     void inject(App githubApp);
 
     @Component.Builder

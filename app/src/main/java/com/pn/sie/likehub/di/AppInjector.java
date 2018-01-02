@@ -46,7 +46,7 @@ public class AppInjector {
                     @Override
                     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
                         tokenActivity(activity);
-                        handleActivity(activity);
+                        //handleActivity(activity);
                     }
 
                     @Override
@@ -89,6 +89,12 @@ public class AppInjector {
         }
     }
 
+    /**
+     * 对所有Activity手动实现了HasSupportFragmentInjector的Activity进行注册;
+     * 对Activity中内嵌SupportFragment且实现了Injectable接口的再进行注册
+     *
+     * @param activity 目标页面
+     */
     private static void handleActivity(Activity activity) {
         if (activity instanceof HasSupportFragmentInjector) {
             AndroidInjection.inject(activity);
