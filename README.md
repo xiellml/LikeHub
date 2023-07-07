@@ -18,7 +18,6 @@ What's LikeHub?
 ## Contact Me
 Any questions: Welcome to contact me.
  - **Email:** siesielee@gmail.com
- - **QQ:** 864861844
  - **Blog:** [Sand with the Wind](https://sieml.github.io/archives/)
 
 ## License
